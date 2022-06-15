@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: docker
+
+logging:
+  config: classpath:logging-config.xml
+
+# Please enter a secret key assigned to the application
+ompass:
+  secret:
+    key: e6c79f2132584692640e39c755f7a615d85fdb662d054f4eec312d
+
+
+
+

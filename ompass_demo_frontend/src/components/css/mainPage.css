@@ -1,0 +1,163 @@
+@font-face {
+  font-family: "cookie";
+  src: url("../../font/font.ttf");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;700;900&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+#mainContent {
+  width: 95%;
+  display: flex;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+#mainContent ul {
+  height: 40%;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+#show-authentication-method img {
+  width: 42%;
+}
+
+.showBox {
+  width: 65%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 1.8rem;
+  line-height: 3.5rem;
+  font-weight: bold;
+  color: rgb(51, 51, 51);
+  background: rgb(240, 240, 240);
+  border-radius: 5rem 5rem 0rem 0rem;
+}
+#login-message {
+  width: 80%;
+  align-items: center;
+  word-break: keep-all;
+}
+
+@media (max-width: 1920px) {
+  #mainContent {
+    width: 100%;
+  }
+  #mainContent ul {
+    height: 50%;
+  }
+
+  #show-authentication-method img {
+    width: 50%;
+  }
+
+  .showBox {
+    width: 100%;
+    font-size: 1.3rem;
+    line-height: 3rem;
+  }
+  #login-message {
+    width: 80%;
+    align-items: center;
+    word-break: keep-all;
+  }
+}
+
+@media (max-width: 820px) {
+  #mainContent {
+    width: 100%;
+    flex-direction: column;
+  }
+  #mainContent ul {
+    height: 50%;
+    position: relative;
+  }
+  #show-authentication-method {
+    position: absolute;
+    top: 2rem;
+  }
+  #show-authentication-method img {
+    width: 38%;
+  }
+
+  #show-ompass-info {
+    position: absolute;
+    bottom: 5rem;
+    width: 80%;
+  }
+  .showBox {
+    font-size: 1.3rem;
+    line-height: 3rem;
+    height: 90%;
+  }
+  #login-message {
+    width: 80%;
+    align-items: center;
+    word-break: keep-all;
+  }
+}
+
+@media (max-width: 540px) {
+  #mainContent {
+    width: 100%;
+    flex-direction: column;
+  }
+  #mainContent ul {
+    height: 50%;
+    position: relative;
+  }
+  #show-authentication-method {
+    position: absolute;
+    top: 3rem;
+  }
+  #show-authentication-method img {
+    width: 38%;
+  }
+
+  #show-ompass-info {
+    position: absolute;
+    bottom: 5rem;
+    width: 80%;
+  }
+  .showBox {
+    font-size: 1rem;
+    line-height: 2rem;
+    height: auto;
+    padding: 2.5rem 0;
+    border-radius: 3rem 3rem 0rem 0rem;
+  }
+  #login-message {
+    width: 80%;
+    align-items: center;
+    word-break: keep-all;
+  }
+}
+@media (max-width: 280px) {
+  #show-authentication-method {
+    top: 0rem;
+  }
+  #show-authentication-method img {
+    width: 50%;
+  }
+
+  #show-ompass-info {
+    bottom: 8rem;
+    width: 100%;
+  }
+  .showBox {
+    font-size: 0.9rem;
+    line-height: 1.9rem;
+  }
+}

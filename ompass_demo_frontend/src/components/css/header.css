@@ -1,0 +1,155 @@
+@font-face {
+  font-family: "cookie";
+  src: url("../../font/font.ttf");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;700;900&display=swap");
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#header-block {
+  height: 100px;
+  width: 100%;
+  padding: 0 2rem;
+  background: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  width: 200px !important;
+}
+
+#logoutBtn {
+  margin-top: -15px;
+  font-family: cookie;
+  border-radius: 30px;
+  width: 130px;
+  background-color: #1e88e5;
+  border: none;
+  color: #fff;
+  padding: 15px 0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+#header-wrapper {
+  color: #40a9ff;
+  width: 100%;
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+}
+
+.right {
+  padding-top: 20px;
+  float: right;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 540px) {
+  .wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  #header-block {
+    height: 100px;
+    width: 100%;
+    padding: 0 2rem;
+    background: white;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  .logo img {
+    width: 150px !important;
+  }
+
+  #logoutBtn {
+    border-radius: 30px;
+    width: 130px;
+    background-color: #1e88e5;
+    border: none;
+    color: #fff;
+    padding: 12px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  #header-wrapper {
+    color: #40a9ff;
+    width: 100%;
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+  }
+
+  .right {
+    padding-top: 20px;
+    float: right;
+    display: flex;
+    align-items: center;
+  }
+}
+@media (max-width: 280px) {
+  #header-block {
+    height: 100px;
+    width: 100%;
+    padding: 0 2rem;
+    background: white;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+  }
+
+  .logo img {
+    width: 100px !important;
+  }
+
+  #logoutBtn {
+    border-radius: 30px;
+    width: 80px;
+    background-color: #1e88e5;
+    border: none;
+    color: #fff;
+    padding: 8px 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 8px;
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  #header-wrapper {
+    color: #40a9ff;
+    width: 100%;
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+  }
+
+  .right {
+    padding-top: 20px;
+    float: right;
+    display: flex;
+    align-items: center;
+  }
+}

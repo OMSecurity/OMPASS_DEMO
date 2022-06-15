@@ -1,0 +1,14 @@
+.bottom {
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 280px) {
+  .bottom {
+    width: 100%;
+    text-align: center;
+  }
+  .copy {
+    font-size: 0.5rem !important;
+  }
+}
