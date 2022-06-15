@@ -8,11 +8,12 @@
 ## 2. Generating a Secret Key for OMPASS API Call ([For instructions]("https://www.ompasscloud.com/en/document/application"))
 - After logging in to your account, select "Applications" tab from App Management on the left.
 - Click the [Register] button.
-- Enter an application name. (e.g. DEMO)
+- Enter an application name. (e.g. DEMO) and click the [Check Availability] button
 - Enter a domain to be used in OMPASS_DEMO. (ex. https://www.example.com)
-- Enter a redirect URL. (Default is /ompass)
+- Enter a redirect URL containing "/ompass" at the end (ex. https://www.example.com/ompass)
 - Leave the policy as "Default Policy", then click [Register].
-- Check the generated "secret key".
+- Select the application you created, then click the [Edit] button.
+- Check the generated "secret key", then copy it to use in "Backend Settings" afterwards.
 
 ## 3. Change Settings in Code
 ### Backend Settings
@@ -46,14 +47,14 @@
 
 > ompass_demo
 
-3. Run docker compose.
+3. Run docker compose (Run docker compose by one of the following)
 
 > Docker run command in foreground : docker-compose up
 
 > Docker run command in background : docker-compose up -d 
 
 
-4. Server Startup Complete
+4. Server Startup Complete (Server startup is completed if the image below shows up)
 
 ![](./img/img6.png)
 
