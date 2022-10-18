@@ -30,7 +30,7 @@ public class LoginService {
             throw new FailLoginException();
         }
 
-        // Step 2 : Call OMPASS U2F API to get OMPASS URI as response value.
+        // Step 2 : Call OMPASS U2F API to get OMPASS URI as response value..
         return callOmpassAPI.getOmpassUriForU2F(request.getUserId(), request.getLang());
     }
 
