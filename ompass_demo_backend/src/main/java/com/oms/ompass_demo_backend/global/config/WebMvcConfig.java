@@ -33,7 +33,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
                 .addPathPatterns("/auth/**")
                 .excludePathPatterns("/auth", "/auth/users/**")
                 .excludePathPatterns("/auth/users/mail/**", "/auth/login/**", "/auth/token-verification", "/auth/ompass/token-verification");
-
     }
 
     @Override
