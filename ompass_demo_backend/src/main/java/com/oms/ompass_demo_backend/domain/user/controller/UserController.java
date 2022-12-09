@@ -3,7 +3,7 @@ package com.oms.ompass_demo_backend.domain.user.controller;
 import com.oms.ompass_demo_backend.domain.user.model.EmailTokenVerificationRequest;
 import com.oms.ompass_demo_backend.domain.user.model.InitUserRequest;
 import com.oms.ompass_demo_backend.domain.user.model.SignupRequest;
-import com.oms.ompass_demo_backend.domain.user.service.MailService;
+import com.oms.ompass_demo_backend.global.MailService;
 import com.oms.ompass_demo_backend.domain.user.service.UserService;
 import com.oms.ompass_demo_backend.global.jwt.JwtService;
 import io.jsonwebtoken.Claims;
@@ -14,11 +14,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.mail.MessagingException;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.io.IOException;
-import java.util.Map;
 
 @Slf4j
 @CrossOrigin

@@ -8,7 +8,7 @@ logging:
 # Please enter a secret key assigned to the application
 ompass:
   secret:
-    key: e6c79f2132584692640e39c755f7a615d85fdb662d054f4eec312d
+    key: 7fdcdc7596ee1337eb9fab6b6d40d49dffed33d399845e21c780605d17a6582e
 
 
 

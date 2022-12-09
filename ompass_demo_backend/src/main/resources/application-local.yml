@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mariadb://localhost:3306/demo
+    url: jdbc:mariadb://localhost:3306/demo_agent
     driver-class-name: org.mariadb.jdbc.Driver
     username: YOUR DB ID
     password: YOUR DB PASSWORD
@@ -37,9 +37,9 @@ spring:
 server:
   ssl:
     enabled: true
-    key-store: classpath:oms1.keystore
-    key-store-password: omsoms
-  port: 7000
+    key-store: classpath:oms_keystore
+    key-store-password: oms20190131
+  port: 8004
   error:
     whitelabel:
       enabled: false

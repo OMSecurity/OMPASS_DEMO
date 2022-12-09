@@ -25,6 +25,7 @@ public class LoginController {
 
     /**
      * This is a login API to which OMPASS's secondary authentication is applied. (Step 1)
+     *
      * @param request : user ID, password, and the language of the OMPASS registration and authentication page
      * @return : OMPASS URI (Invoked by passing the URI to the frontend)
      */
@@ -35,6 +36,7 @@ public class LoginController {
 
     /**
      * This is an API that allows you to log in without a password with OMPASS. (Step 1)
+     *
      * @param request : language of the OMPASS registration and authentication page
      * @return : OMPASS URI (Invoked by passing the URI to the frontend)
      */
@@ -45,13 +47,14 @@ public class LoginController {
 
     /**
      * Validate the access token redirected to the redirect url of the designated application after completing OMPASS registration and authentication (Step 2)
+     *
      * @param request : user ID and redirected access token
      * @return : user information for successful login
      */
     @PostMapping(value = "/ompass/token-verification")
     public ResponseEntity<?> tokenVerification(@RequestBody TokenVerificationRequest request, HttpServletResponse response) {
         LoginResponse user = loginService.verifyOmpassToken(request);
-        String loginAccessToken = jwtService.create("demo","userInfo", user);
+        String loginAccessToken = jwtService.create("demo", "userInfo", user);
         response.setHeader("Authorization", "Bearer " + loginAccessToken);
         // omit refresh token
         return new ResponseEntity<>(user, HttpStatus.OK);

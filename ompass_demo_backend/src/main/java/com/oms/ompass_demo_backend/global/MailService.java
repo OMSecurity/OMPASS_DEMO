@@ -1,4 +1,4 @@
-package com.oms.ompass_demo_backend.domain.user.service;
+package com.oms.ompass_demo_backend.global;
 
 import com.oms.ompass_demo_backend.domain.user.repository.UserRepository;
 import com.oms.ompass_demo_backend.global.jwt.JwtService;

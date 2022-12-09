@@ -2,15 +2,21 @@ package com.oms.ompass_demo_backend.domain.ompass.service;
 
 import com.oms.ompass_demo_backend.domain.login.model.LastLoginProcessRequest;
 import com.oms.ompass_demo_backend.domain.ompass.model.OmpassTokenVerification;
+import io.netty.handler.ssl.SslContext;
+import io.netty.handler.ssl.SslContextBuilder;
+import io.netty.handler.ssl.util.InsecureTrustManagerFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
+import org.springframework.http.client.reactive.ReactorClientHttpConnector;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
+import reactor.netty.http.client.HttpClient;
 
 import javax.annotation.PostConstruct;
+import javax.net.ssl.SSLException;
 
 @Slf4j
 @Service
@@ -22,7 +28,7 @@ public class OmpassService {
     private String secretKey;
 
     @PostConstruct
-    public void init() {
+    public void init() throws SSLException {
         webClient = WebClient.builder()
                 .baseUrl("https://interface-api.ompasscloud.com")
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, String.valueOf(MediaType.APPLICATION_JSON))
