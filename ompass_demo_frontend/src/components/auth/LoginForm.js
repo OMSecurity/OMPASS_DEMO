@@ -5,7 +5,7 @@ import palette from "../../lib/styles/palette";
 import APIService from "../../lib/API/APIService";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faExclamationCircle} from "@fortawesome/free-solid-svg-icons";
-
+import OMPASS from "ompass";
 import {message, Tabs} from "antd";
 
 import icon from "../../static/img/icon-lg.png";
@@ -82,11 +82,7 @@ const LoginFrom = ({history, props}) => {
                             setErrorMsg("");
                             let uri = res.data;
                             localStorage.setItem("u2f", "Y");
-                            window.open(
-                                uri,
-                                "test",
-                                `status = no width=800, height=500 ,left =${popupX}, top=${popupY}`
-                            );
+                            OMPASS(uri);
                         } else {
                             setErrorMsg(t("failLogin"))
                         }
@@ -111,11 +107,7 @@ const LoginFrom = ({history, props}) => {
         checkLang();
         APIService.loginByUAF(lang).then((res) => {
             let uri = res.data;
-            window.open(
-                uri,
-                "test",
-                `status = no width=800,height=500 ,left=${popupX}, top=${popupY}`
-            );
+            OMPASS(uri);
         });
     };
 

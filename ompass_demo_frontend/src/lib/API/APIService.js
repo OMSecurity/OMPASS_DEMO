@@ -3,8 +3,6 @@ import axios from 'axios';
 import {RP_SERVER_URL, INTERFACE_SERVER_URL} from "../../rest/Url";
 
 const RP_URL = RP_SERVER_URL();
-const OMPASS = INTERFACE_SERVER_URL();
-
 
 class APIService {
     signup(user) {
@@ -53,14 +51,6 @@ class APIService {
 
     loginForFido(userId) {
         return axios.get(RP_URL + "/auth/fido-login?userId=" + userId);
-    }
-
-    callAPI(userId) {
-        return axios.delete(`${OMPASS}/fido2/did/42/username/${userId}`, {
-            headers: {
-                serverKey: "58cd86466dbdf24abe8461677c5fce2053d65e5e5e161e4520e8b981cc22b434"
-            }
-        });
     }
 
     checkToken() {
