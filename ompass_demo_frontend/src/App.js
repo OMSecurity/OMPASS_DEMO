@@ -14,12 +14,12 @@ const App = () => {
     return (
         <Switch>
             <Route path="/" exact={true} component={MainPage}/>
-            <Route component={LoginPage} path="/login"/>
-            <Route component={RegisterPage} path="/register"/>
-            <Route component={MyPage} path ="/mypage"/>
-            <Route component={VerifyRedirectToken} path ="/ompass"/>
-            <Route component={ChangePassword} path="/auth"/>
-            <Route render = {({location}) => <NotFound/>} />
+            <Route path="/login" component={LoginPage}/>
+            <Route path="/register" component={RegisterPage}/>
+            <Route path ="/mypage" component={MyPage}/>
+            <Route path ="/ompass" component={VerifyRedirectToken}/>
+            <Route path="/auth" component={ChangePassword}/>
+            <Route component={NotFound} />
         </Switch>
     );
 };

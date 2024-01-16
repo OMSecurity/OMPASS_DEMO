@@ -5,12 +5,11 @@ import palette from "../../lib/styles/palette";
 import APIService from "../../lib/API/APIService";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faExclamationCircle} from "@fortawesome/free-solid-svg-icons";
-import OMPASS from "ompass";
-import {message, Tabs} from "antd";
+import { OMPASS } from "ompass";
+import {Tabs} from "antd";
 
-import icon from "../../static/img/icon-lg.png";
+import icon from "../../assets/img/icon-lg.png";
 
-import {INTERFACE_SERVER_URL} from "../../rest/Url";
 import "../css/loginPage.css";
 import {useTranslation} from "react-i18next";
 
@@ -18,10 +17,6 @@ export const FIDO2_REDIRECT_DOMAIN = window.location.origin.slice(8);
 
 
 const {TabPane} = Tabs;
-
-function callback(key) {
-    console.log(key);
-}
 
 const AuthFormBlock = styled.div`
   h2 {
@@ -40,16 +35,10 @@ const LoginFrom = ({history, props}) => {
         };
         return [value, handler];
     };
-    let color = "#868e96";
     const [userId, onChangeUserId] = useInput("");
     const [password, onChangePassword] = useInput("");
 
     const [errorMsg, setErrorMsg] = useState("");
-
-    const popupWidth = 800;
-    const popupHeight = 500;
-    const popupX = window.screen.width / 2 - popupWidth / 2;
-    const popupY = window.screen.height / 2 - popupHeight / 2;
 
     let lang;
 
@@ -73,7 +62,7 @@ const LoginFrom = ({history, props}) => {
             }
 
             if (errorCheck) {
-                await checkLang();
+                checkLang();
                 const user = {userId, password, lang};
                 console.log(user.lang);
                 APIService.loginByU2F(user)
@@ -137,7 +126,6 @@ const LoginFrom = ({history, props}) => {
             <div id="login-header">
                 <Tabs
                     defaultActiveKey="1"
-                    onChange={callback}
                     type="card"
                     size={"large"}
                 >

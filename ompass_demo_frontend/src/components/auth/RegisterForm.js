@@ -2,7 +2,6 @@ import React, {useCallback, useState} from "react";
 import styled from "styled-components";
 import {Link, withRouter} from "react-router-dom";
 import palette from "../../lib/styles/palette";
-import Button from "../common/Button";
 import APIService from "../../lib/API/APIService";
 import {useTranslation} from "react-i18next";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -22,7 +21,7 @@ const RegisterForm = ({history}) => {
     const [passwordError, setPasswordError] = useState("");
     const [errorMsg, setErrorMsg] = useState("");
 
-    const {t, i18n} = useTranslation();
+    const {t} = useTranslation();
     // CustomHook
     const useInput = () => {
         const [value, setter] = useState(null);

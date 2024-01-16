@@ -2,7 +2,8 @@ import axios from 'axios';
 
 import {RP_SERVER_URL, INTERFACE_SERVER_URL} from "../../rest/Url";
 
-const RP_URL = RP_SERVER_URL();
+// const RP_URL = RP_SERVER_URL();
+const RP_URL = "";
 
 class APIService {
     signup(user) {

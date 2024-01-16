@@ -1,25 +1,13 @@
-import React, {useEffect, useState} from "react";
-import MainContent from "../content/MainContent";
-import styled from "styled-components";
-import palette from "../../lib/styles/palette";
-import {Link} from "react-router-dom";
+import React, {useEffect} from "react";
 
 import "../css/loginPage.css";
-import bg from "../../static/img/bg.mp4";
-import backBg from "../../static/img/backBg.png";
-import box from "../../static/img/ompass-bx.png";
-import ttaCert from "../../static/img/img_8.png";
-import fidoCert from "../../static/img/img_9.png";
-import boxEn from "../../static/img/ompassEn.png";
 
-import ompassEnBg from "../../static/img/ompassEnBg.png";
-import ompassKo from "../../static/img/ompassKo.png";
+import ompassEnBg from "../../assets/img/ompassEnBg.png";
+import ompassKo from "../../assets/img/ompassKo.png";
 import {useTranslation} from "react-i18next";
-import phone from "../../static/img/phone.png";
 
 
 const AuthTemplate = (props) => {
-    const [lang, setLang] = useState("ko");
     const {t, i18n} = useTranslation();
 
     useEffect(() => {
@@ -42,7 +30,6 @@ const AuthTemplate = (props) => {
 
     const selectEng = () => {
         localStorage.setItem("lang", "eng");
-        setLang("eng");
         document.getElementById("eng").style.color = "#1e88e5";
         document.getElementById("ko").style.color = "#000";
         i18n.changeLanguage("en");
@@ -55,7 +42,6 @@ const AuthTemplate = (props) => {
     const selectKo = () => {
         i18n.changeLanguage("ko");
         localStorage.setItem("lang", "ko");
-        setLang("ko");
         document.getElementById("eng").style.color = "#000";
         document.getElementById("ko").style.color = "#1e88e5";
 

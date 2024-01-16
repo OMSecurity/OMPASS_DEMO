@@ -1,25 +1,18 @@
-import React, {useEffect, useState} from "react";
-import styled from "styled-components";
-
-import Responsive from "./Responsive";
-import Button from "./Button";
-import {Link, withRouter, Redirect} from "react-router-dom";
+import React from "react";
+import {withRouter} from "react-router-dom";
 
 import "antd/dist/antd.css";
-import APIService from "../../lib/API/APIService";
 import "../css/header.css";
-import logo from "../../static/img/logologo.png";
-import {Buffer} from "buffer";
+import logo from "../../assets/img/logo.png";
 import {useTranslation} from "react-i18next";
 
 
 const Header = ({history}) => {
     const goLogout = () => {
-        const userId = localStorage.getItem("userId");
         localStorage.clear();
         history.push("/login");
     };
-    const {t, i18n} = useTranslation();
+    const {t} = useTranslation();
 
     return (
         <>

@@ -1,26 +1,14 @@
 import React, { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import palette from "../../lib/styles/palette";
-import Button from "../common/Button";
 import APIService from "../../lib/API/APIService";
 import axios from "axios";
-import { message, Tabs } from "antd";
-import { SafetyCertificateOutlined } from "@ant-design/icons";
-import icon from "../../static/img/icon-lg.png";
-import no from "../../static/img/pngwing.com.png";
+import no from "../../assets/img/xIcon.png";
 import qs from "qs";
 import { useTranslation } from "react-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExclamationCircle } from "@fortawesome/free-solid-svg-icons";
-
-/**
- * 회원가입 또는 로그인 폼을 보여줍니다.
- */
-
-function callback(key) {
-  console.log(key);
-}
 
 const AuthFormBlock = styled.div`
   h2 {
@@ -29,67 +17,6 @@ const AuthFormBlock = styled.div`
     margin-bottom: 1.245rem;
     text-align: center;
   }
-`;
-
-/**
- * 스타일링된 input
- */
-const StyledInput = styled.input`
-  font-size: 1rem;
-  border: none;
-  border-bottom: 1px solid ${palette.gray[5]};
-  padding-bottom: 0.5rem;
-  outline: none;
-  width: 100%;
-  &:focus {
-    color: $oc-teal-7;
-    border-bottom: 1px solid ${palette.gray[7]};
-  }
-  & + & {
-    margin-top: 1rem;
-  }
-`;
-
-/**
- * 폼 하단에 로그인 혹은 회원가입 링크를 보여줌
- */
-const Footer = styled.div`
-  margin-top: 2rem;
-  text-align: center;
-  a,
-  p {
-    color: ${palette.gray[6]};
-    text-decoration: none;
-    &:hover {
-      color: ${palette.gray[9]};
-    }
-  }
-`;
-
-const ButtonWithMarginTop = styled(Button)`
-  margin-top: 1rem;
-`;
-
-/**
- * 에러를 보여줍니다
- */
-const ErrorMessage = styled.div`
-  color: red;
-  text-align: center;
-  font-size: 0.875rem;
-  margin-top: 1rem;
-`;
-
-const BorderDiv = styled.div`
-  width: 100%;
-  margin-top: -16px;
-  border: 1px solid #e9ecef;
-  padding-bottom: 10px;
-  height: 300px;
-`;
-
-const MySpan = styled.span`
-  color: ${palette.cyan[9]};
 `;
 
 const ChangePassword = ({ history, location }) => {
@@ -106,12 +33,11 @@ const ChangePassword = ({ history, location }) => {
     };
     return [value, handler];
   };
-  let color = "#868e96";
+
   const [newPassword, onChangeNewPassword] = useInput("");
   const [checkPassword, onChangeCheckPassword] = useInput("");
 
   const [errorMsg, setErrorMsg] = useState("");
-  const [errorCheck, setErrorCheck] = useState(true);
   const [validUser, setVaildUser] = useState("");
   const [token, setToken] = useState();
 
@@ -123,7 +49,7 @@ const ChangePassword = ({ history, location }) => {
       .then((res) => {
         console.log(res);
         if (res.data) {
-            setToken(res.headers.authorization);
+          setToken(res.headers.authorization);
           setVaildUser("vaild");
         } else {
           setVaildUser("invaild");
@@ -136,16 +62,8 @@ const ChangePassword = ({ history, location }) => {
     localStorage.setItem("mailToken", query.token);
     axios.defaults.headers.common["MailAuthorization"] =
       localStorage.getItem("mailToken");
-    /*      APIService.checkMailToken(query.id,query.token)
-                  .then(res=>{
-                      console.log(res);
-                      if(res.data === 'validToken'){
-                          setVaildUser('vaild')
-                      } else {
-                          setVaildUser('invaild')
-                      }
-                  })*/
   }, []);
+  
   const changePassword = useCallback(
     async (e) => {
       e.preventDefault();
@@ -175,7 +93,6 @@ const ChangePassword = ({ history, location }) => {
         return false;
       }
 
-      setErrorCheck("");
       let sendObj = {
         userId: query.id,
         password: newPassword,
@@ -183,15 +100,15 @@ const ChangePassword = ({ history, location }) => {
       APIService.changePassword(query.id, newPassword, token).then((res) => {
         console.log(res);
         if (res.status === 200) {
-        /*  APIService.callAPI(sendObj.userId)
-            .then((res) => {
-              alert(t("successChangePassword"));
-              history.push("/login");
-            })
-            .catch((err) => {});*/
+          /*  APIService.callAPI(sendObj.userId)
+              .then((res) => {
+                alert(t("successChangePassword"));
+                history.push("/login");
+              })
+              .catch((err) => {});*/
 
-            alert(t("successChangePassword"));
-            history.push("/login");
+          alert(t("successChangePassword"));
+          history.push("/login");
         }
       });
       console.log(newPassword, checkPassword);

@@ -1,6 +1,7 @@
 {
   "name": "fido-front",
   "version": "0.1.0",
+  "proxy": "https://ompass.kr:8003",
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.2.2",
@@ -13,9 +14,8 @@
     "antd": "^4.7.0",
     "axios": "^0.20.0",
     "bootstrap": "^4.5.2",
-    "cross-env": "^7.0.3",
     "i18next": "^20.4.0",
-    "ompass": "^0.2.7",
+    "ompass": "^0.5.1",
     "qs": "^6.9.4",
     "react": "^16.13.1",
     "react-async": "^10.0.1",
@@ -29,8 +29,8 @@
     "styled-components": "^5.2.0"
   },
   "scripts": {
-    "start": "export HTTPS=true&&PORT=3200 react-scripts start",
-    "build": "cross-env GENERATE_SOURCEMAP=false react-scripts build",
+    "start": "set HTTPS=true&&react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
